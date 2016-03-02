@@ -1,0 +1,41 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>Accordion Script</title>
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <style>
+            dl.accordion dt {
+             cursor: pointer;   
+            }
+        </style>
+    </head>
+    <body>
+        <dl class="accordion">
+            <dt>Item 1</dt>
+            <dd>This is the description for Item 1.</dd>
+            
+            <dt>Item 2</dt>
+            <dd>This is the description for Item 2.</dd>
+            
+            <dt>Item 3</dt>
+            <dd>This is the description for Item 3.</dd>
+        </dl>
+        <script>
+            $("dl.accordion dd").hide();
+            
+            $("dl.accordion dt").on("click", function() {
+                $("dl.accordion dt[data-active]")
+                    .removeAttr("data-active")
+                    .next() // dd element
+                    .slideUp();
+                
+                $(this)
+                    .attr("data-active", true)
+                    .next() // dd element
+                    .slideDown();
+            });
+        </script>
+    </body>
+</html>
+

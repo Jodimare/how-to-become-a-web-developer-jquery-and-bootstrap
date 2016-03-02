@@ -1,0 +1,38 @@
+<!doctype html>
+
+<html>
+    <head>
+        <title>Introduction to Web Development</title>
+        <link rel="stylesheet" type="text/css" href="dom.css" />
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    </head>
+    <body>
+        <div id="sidebar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </div>
+        <div id="main-content"b>
+            <h1>This is the Main Content</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing 
+                elit. Quisque sed orci    vel nisi sodales pellentesque quis non dolor. Nulla 
+                sollicitudin ligula nec sem ultricies tempor. Ut vitae dapibus ante. Donec 
+                viverra porta quam quis ultrices. Curabitur vehicula, ligula nec aliquet 
+                pulvinar, lacus magna varius ipsum, in iaculis lectus odio ac urna.</p>
+        </div>
+        
+        <script>
+            var mainContent = document.getElementById("main-content");
+            
+            mainContent.style.color = "red";
+            
+            var pElement = document.createElement("p");
+            
+            pElement.innerHTML = "This was added dynamically with JavaScript";
+            
+            mainContent.appendChild(pElement);
+        </script>
+    </body>
+</html>
+
