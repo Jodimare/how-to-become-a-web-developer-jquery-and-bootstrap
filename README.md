@@ -2,9 +2,9 @@
 ## Instructor: [Jeremy McPeak][instructor url]
 
 
-Web development can be a daunting topic to get started with. Not only are there are a number of basic languages to learn—HTML, CSS and JavaScript—but there are also so many tools that web developers need to use. Developers don't usually write web apps from scratch, instead we build on other libraries and frameworks to save time and effort.
+Web development can be a daunting topic to get started with. Not only are there are a number of basic languages to learn—HTML, CSS, and JavaScript—but there are also so many tools that web developers need to use. Developers don't usually write web apps from scratch; instead, we build on other libraries and frameworks to save time and effort.
 
-In this course, Envato Tuts+ instructor Jeremy McPeak will teach you some of the fundamental tools for front-end web development. You'll get a primer on JavaScript, learn how to use package management tools such as NPM and Bower, and then go on to practice using the very powerful and popular jQuery framework for efficient manipulation of HTML. Finally, you'll learn how to use the Bootstrap CSS framework to jumpstart your user interface and build responsive apps.
+In this course, Envato Tuts+ instructor Jeremy McPeak will teach you some of the fundamental tools for front-end web development. You'll get a primer on JavaScript, learn how to use package management tools such as NPM and Bower, and then go on to practice using the very powerful and popular jQuery framework for efficient manipulation of HTML. You'll learn how to use the Bootstrap CSS framework to jump-start your user interface and build responsive apps. Finally, you'll learn how to do DOM manipulation with vanilla JavaScript, how to fetch JSON data, and how to use CSS transitions.
 
 
 ## Source Files Description
