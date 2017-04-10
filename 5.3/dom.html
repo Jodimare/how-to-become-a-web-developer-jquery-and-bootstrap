@@ -38,31 +38,20 @@
             </div>
         </div>
         <script>
-            // getElementById()
-            // querySelector() // returns a single element
-            // querySelectorAll() // returns a NodeList
             var elements = document.querySelectorAll("li, p"); // NodeList
             
             function changeElementStyle(element) {
-                element.style.backgroundColor = "silver";
+                element.classList.add("important-text", "red");
+                element.classList.remove("red");
+                //element.classList.toggle("important-text");
+                
+                //alert(element.classList.item(0));
+                alert(element.classList.contains("red"));
+                
+                //element.style.backgroundColor = "silver";
             }
             
             elements.forEach(changeElementStyle);
-            
-            /*var mainContent = document.getElementById("main-content");
-            mainContent.style.color = "red";
-            
-            var pElement = document.createElement("p");
-            pElement.innerHTML = "This was added dynamically with JavaScript";
-            
-            mainContent.appendChild(pElement);
-            
-            
-            $("#main-content")
-                .css("color", "red")
-                .append("<p>This was added dynamically with jQuery</p>");
-            
-            $("li, p").css("background-color", "gray");*/
         </script>
     </body>
 </html>

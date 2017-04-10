@@ -3,44 +3,53 @@
 <html>
     <head>
         <title>Introduction to Web Development</title>
-        <link rel="stylesheet" type="text/css" href="dom.css" />
-        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <style>
+            .important-text {
+                font-weight: bold;
+                text-decoration: underline;
+            }
+            
+            .red {
+                color: red;
+            }
+        </style>
     </head>
     <body>
-        <div id="sidebar">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-            </ul>
+        <div class="container">
+            <div class="row">
+                <div id="sidebar" class="col-md-2">
+                    <h2>Menu</h2>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                    </ul>
+                </div>
+                <div id="main-content" class="col-md-10">
+                    <h2>This is the Main Content</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing 
+                        elit. Quisque sed orci    vel nisi sodales pellentesque quis non dolor. Nulla 
+                        sollicitudin ligula nec sem ultricies tempor. Ut vitae dapibus ante. Donec 
+                        viverra porta quam quis ultrices. Curabitur vehicula, ligula nec aliquet 
+                        pulvinar, lacus magna varius ipsum, in iaculis lectus odio ac urna.</p>
+                </div>
+            </div>
         </div>
-        <div id="main-content">
-            <h1>This is the Main Content</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing 
-                elit. Quisque sed orci    vel nisi sodales pellentesque quis non dolor. Nulla 
-                sollicitudin ligula nec sem ultricies tempor. Ut vitae dapibus ante. Donec 
-                viverra porta quam quis ultrices. Curabitur vehicula, ligula nec aliquet 
-                pulvinar, lacus magna varius ipsum, in iaculis lectus odio ac urna.</p>
-        </div>
-        
         <script>
+            var mainContent = $("#main-content");
             
-            $("#main-content")
-                .css("color", "red")
+            mainContent
+                .addClass("important-text red")
+                .removeClass("red")
                 .append("<p>This was added dynamically with jQuery</p>");
             
-            $("li, p").css("background-color", "gray");
+            mainContent.toggleClass("important-text");
+            var hasRed = mainContent.hasClass("red");
             
-            //var mainContent = $("#main-content"); // jQuery object
-            
-            //mainContent.css("color", "red");
-            
-            //mainContent.append("<p>This was added dynamically with jQuery</p>");
-            
-            //var pElement = document.createElement("p");
-            
-            //pElement.innerHTML = "This was added dynamically with JavaScript";
-            
-            //mainContent.appendChild(pElement);
+            if (hasRed) {
+                alert("Red is applied");   
+            }
         </script>
     </body>
 </html>

@@ -1,0 +1,74 @@
+<!doctype html>
+
+<html>
+<head>
+    <title>Introduction to Web Development</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="foreach-polyfill.js"></script>
+    <style>
+        body {
+            font-size: 2.25em;
+        }
+        
+        dl.accordion dt {
+            cursor: pointer;   
+        }
+        
+        dl.accordion dd {
+            height: 0;
+            overflow: hidden;
+            transition: height 200ms ease;
+        }
+        
+        dl.accordion dt[data-active] + dd {
+            height: 50px;   
+        }
+    </style>
+</head>
+    
+<body>
+    
+    <script>
+        fetch("accordion-data.json").then(function(response) {
+           response.json().then(function(data) {
+              buildHtml(data);
+              init();
+           });
+        });
+        
+        function buildHtml(data) {
+            var html = '<dl class="accordion">';
+            
+            data.forEach(function(item) {
+                html = `${html} <dt>${item.title}</dt>`;
+                html = `${html} <dd>${item.description}</dd>`; 
+            });
+            
+            html = `${html} </dl>`;
+            
+            document.body.insertAdjacentHTML("afterbegin", html);
+        }
+        
+        function init() {
+            var dts = document.querySelectorAll("dl.accordion dt");
+            
+            dts.forEach(function(element) {
+               element.addEventListener("click", dtClickHandler); 
+            });
+        }
+        
+        function dtClickHandler(e) {
+            var target = e.target;
+            var dl = target.parentNode;
+            var active = dl.querySelector("dt[data-active]");
+            
+            if (active != null) {
+                active.removeAttribute("data-active");   
+            }
+            
+            target.setAttribute("data-active", true);
+        }
+    </script>
+</body>
+</html>
+

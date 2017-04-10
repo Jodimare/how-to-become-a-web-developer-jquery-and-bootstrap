@@ -23,8 +23,8 @@
                 <div id="sidebar" class="col-md-2">
                     <h2>Menu</h2>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
+                        <li><a id="home-link" href="#">Home</a></li>
+                        <li><a id="about-link" href="#">About</a></li>
                     </ul>
                 </div>
                 <div id="main-content" class="col-md-10">
@@ -38,31 +38,35 @@
             </div>
         </div>
         <script>
-            // getElementById()
-            // querySelector() // returns a single element
-            // querySelectorAll() // returns a NodeList
-            var elements = document.querySelectorAll("li, p"); // NodeList
+            var elements = document.querySelectorAll("li, p");
             
             function changeElementStyle(element) {
-                element.style.backgroundColor = "silver";
+                element.classList.add("important-text");
             }
             
             elements.forEach(changeElementStyle);
             
-            /*var mainContent = document.getElementById("main-content");
-            mainContent.style.color = "red";
+            var homeLink = document.getElementById("home-link");
             
-            var pElement = document.createElement("p");
-            pElement.innerHTML = "This was added dynamically with JavaScript";
+            function mouseHandler(e) {
+                var element = e.target;
+                var type = e.type;
+                var content = "";
+                
+                if (type === "mouseover") {
+                    content = element.innerHTML;
+                    element.setAttribute("data-content", content);
+                    content = content + " is active";
+                } else {
+                    content = element.getAttribute("data-content");
+                }
+                
+                element.innerHTML = content;
+            }
             
-            mainContent.appendChild(pElement);
+            homeLink.addEventListener("mouseover", mouseHandler);
             
-            
-            $("#main-content")
-                .css("color", "red")
-                .append("<p>This was added dynamically with jQuery</p>");
-            
-            $("li, p").css("background-color", "gray");*/
+            homeLink.addEventListener("mouseout", mouseHandler);
         </script>
     </body>
 </html>
